@@ -54,12 +54,12 @@ jobs:
       - name: Compile Dart executable
         run: |
           C:\tools\dart-sdk\bin\dart pub get
-          C:\tools\dart-sdk\bin\dart compile exe "bin\main.dart" -o "nexustools.exe"
+          C:\tools\dart-sdk\bin\dart compile jit-snapshot "bin\main.dart" -o "nexustools"
       - name: Upload Dart executable
         uses: actions/upload-artifact@v2
         with:
           name: nexustools-reactos-x32
-          path: nexustools.exe
+          path: nexustools
   compile_macos:
     runs-on: macos-latest
     steps:
