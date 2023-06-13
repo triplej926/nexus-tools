@@ -9,7 +9,7 @@ ARCH=$(uname -m)
 if [ -d $HOME/.nexustools ]; then
 	echo "[WARN] Nexus Tools folder found in $HOME/.nexustools. Press ENTER to delete or X to skip."
 	read -sn1 input
-	[ "$input" = "" ] && rm -rf $HOME/.nexustools
+	[ "$input" = "" ] && adb kill-server && rm -rf $HOME/.nexustools
 else
 	echo "[ OK ] No installation found."
 fi
